@@ -1,0 +1,12 @@
+{
+  "name": "kata-playing-with-digits",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^27.1.1"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
