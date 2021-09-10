@@ -1,11 +1,16 @@
 const fn = require('./fn')
 
+const isNotInteger = fn.pipe(
+  Number.isInteger,
+  fn.not,
+)
+
 const digPowFn = (n, p) => fn.pipe(
   fn.toDigits,
   fn.map((d, i) => d ** (p + i)),
   fn.sum,
   fn.divisionBy(n),
-  fn.branch(Number.isInteger, fn.identity, fn.value(-1))
+  fn.branch(isNotInteger, fn.value(-1))
 )(n)
 
 const digPow = (n, p) => {
