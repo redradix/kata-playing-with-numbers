@@ -1,11 +1,7 @@
 const digPow = (n, p) => {
   const digits = String(n).split("").map(Number);
 
-  let acc = 0;
-  for (let i = 0; i < digits.length; i++) {
-    const digit = digits[i];
-    acc += digit ** (p + i);
-  }
+  const acc = digits.reduce((acc, digit, i) => acc + digit ** (p + i), 0)
 
   const result = acc / n;
 
