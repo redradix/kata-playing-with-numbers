@@ -15,6 +15,7 @@ describe('Playing with numbers', () => {
   it('returns k when can be found (+1 digit input)', () => {
     expect(digPow(89, 1)).toEqual(1)
     expect(digPow(695, 2)).toEqual(2)
+    expect(digPow(46288, 3)).toEqual(51)
   })
 
   it('returns -1 when cannot find k', () => {

@@ -1,14 +1,12 @@
 const digPow = (num, pow) => {
   const numberArr = num.toString().split('')
-  let sum = 0
-
-  for (i=0; i<numberArr.length; i++) {
-    const number = Number(numberArr[i])
-    sum += Math.pow(number,pow + i)
-  }
   
-  if (sum % num === 0) return sum / num;
-
+  const powSum = numberArr.reduce(
+    (sum, number, i) => sum + Math.pow(parseInt(number, 10), pow + i),
+    0
+  )
+  
+  return powSum % num === 0 ? powSum / num : -1
 };
 
 module.exports = {
