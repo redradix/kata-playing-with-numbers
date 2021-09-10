@@ -5,6 +5,13 @@ module.exports = {
 module.exports = {
   digPow: (integer, p) => {
     const integerArray = `${integer}`.split("").map((int) => Number(int));
-    return integerArray;
+    let incrementalPower = p;
+    const sumOfDigits = integerArray.reduce((acc, val) => {
+      acc = val ** incrementalPower;
+      incrementalPower += 1;
+
+      return acc;
+    }, 0);
+    return sumOfDigits;
   },
 };
