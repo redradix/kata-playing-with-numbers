@@ -1,7 +1,9 @@
 const digPow = (num, pow) => {
-  return true
-}
+  const aux = Math.pow(num, pow);
+
+  if (aux % num === 0) return aux / num;
+};
 
 module.exports = {
-  digPow
-}
+  digPow,
+};
