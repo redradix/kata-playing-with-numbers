@@ -2,16 +2,20 @@ module.exports = {
   ble: () => 1,
 };
 
+const integerToDigits = (integer) =>
+  `${integer}`.split("").map((int) => Number(int));
+
+const incrementalPowEachElementOfList = (array, pow) =>
+  array.map((int, index) => int ** (index + pow));
+
 module.exports = {
   digPow: (integer, p) => {
-    const integerArray = `${integer}`.split("").map((int) => Number(int));
-    let incrementalPower = p;
-    const sumOfDigits = integerArray.reduce((acc, val) => {
-      acc = val ** incrementalPower;
-      incrementalPower += 1;
+    if (!integer || !p) return -1;
 
-      return acc;
-    }, 0);
-    return sumOfDigits;
+    const integerList = integerToDigits(integer);
+    const arrayOfPows = incrementalPowEachElementOfList(integerList, p);
+    const sumOfDigits = arrayOfPows.reduce((acc, val) => acc + val);
+    const result = sumOfDigits % integer === 0 ? sumOfDigits / integer : -1;
+    return result;
   },
 };

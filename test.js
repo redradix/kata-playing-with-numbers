@@ -1,9 +1,8 @@
 const bla = require("./index");
-const digPow = require("./index");
 
 describe("Playing with digits", () => {
-  it("fails", () => {
-    expect(bla.ble()).toBe(1);
+  it("fails when empty arguments passed", () => {
+    expect(bla.digPow()).toBe(-1);
   });
   it("digPow(89, 1) should return 1 since 8¹ + 9² = 89 = 89 * 1", () => {
     expect(bla.digPow(89, 1)).toBe(1);
