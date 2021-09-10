@@ -24,4 +24,8 @@ const digPow = (n, p) => {
   return k;
 };
 
-module.exports = digPow;
+module.exports = {
+  numberToDigits,
+  sumPows,
+  digPow,
+};
