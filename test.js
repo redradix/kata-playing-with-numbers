@@ -16,4 +16,8 @@ describe('Playing with numbers', () => {
     expect(digPow(89, 1)).toEqual(1)
     expect(digPow(695, 2)).toEqual(2)
   })
+
+  it('returns -1 when cannot find k', () => {
+    expect(digPow(92, 1)).toEqual(-1)
+  })
 })
