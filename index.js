@@ -1,3 +1,5 @@
-module.exports = {
-  ble: () => 1
-}
+const digPow = (n, k) => {
+  return 1;
+};
+
+module.exports = digPow;
