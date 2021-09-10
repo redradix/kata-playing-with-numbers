@@ -1,7 +1,7 @@
-const bla = require('./index')
+const digPow = require('./index')
 
-describe('Bishop movement', () => {
-  it('fails', () => {
-    expect(bla.ble()).toBe(2)
+describe('Playing with numbers', () => {
+  it('works', () => {
+    expect(true).toBe(true)
   })
 })

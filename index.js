@@ -1,3 +1,7 @@
+const digPow = (num, pow) => {
+  return true
+}
+
 module.exports = {
-  ble: () => 1
+  digPow
 }
