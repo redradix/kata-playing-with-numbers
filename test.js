@@ -6,6 +6,7 @@ describe("digPow", () => {
   });
   it("should return -1", () => {
     expect(digPow(92, 1)).toBe(-1);
+    expect(digPow(93, 1)).toBe(-1);
   });
 
   //digPow(89, 1) should return 1 since 8¹ + 9² = 89 = 89 * 1
