@@ -59,6 +59,12 @@ const lte = right => left => left <= right
 
 const possitive = n => Math.max(0, n)
 
+const toDigits = pipe(
+  String,
+  split(''),
+  map(Number),
+)
+
 const sum = reduce(add, 0)
 
 const sumLt = n => pipe(
@@ -103,6 +109,7 @@ module.exports = {
   lt,
   lte,
   possitive,
+  toDigits,
   sum,
   sumLt,
   divisionBy,

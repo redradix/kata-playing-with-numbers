@@ -1,13 +1,7 @@
 const fn = require('./fn')
 
-const toDigits = fn.pipe(
-  String,
-  fn.split(''),
-  fn.map(Number),
-)
-
 const digPowFn = (n, p) => fn.pipe(
-  toDigits,
+  fn.toDigits,
   fn.map((d, i) => d ** (p + i)),
   fn.sum,
   fn.divisionBy(n),
