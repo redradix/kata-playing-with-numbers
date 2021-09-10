@@ -1,4 +1,4 @@
-const { digPow, numberToDigits, sumPows } = require("./index");
+const { digPow, numberToDigits, isInteger, sumPows } = require("./index");
 
 describe("Helpers", () => {
   it("splits a number into digits", () => {
@@ -13,6 +13,10 @@ describe("Helpers", () => {
     expect(sumPows([9, 2], 1)).toBe(13);
     expect(sumPows([6, 9, 5], 2)).toBe(1390);
     expect(sumPows([4, 6, 2, 8, 8], 3)).toBe(2360688);
+  });
+  it("checks if it is an integer", () => {
+    expect(isInteger(89)).toBe(true);
+    expect(isInteger(92.3)).toBe(false);
   });
 });
 
