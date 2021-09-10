@@ -1,9 +1,9 @@
 const digPow = (n, p) => {
-  const splitedNumber = String(n).split("").map(Number);
+  const digits = String(n).split("").map(Number);
 
   let acc = 0;
-  for (let i = 0; i < splitedNumber.length; i++) {
-    const digit = splitedNumber[i];
+  for (let i = 0; i < digits.length; i++) {
+    const digit = digits[i];
     acc += digit ** (p + i);
   }
 
