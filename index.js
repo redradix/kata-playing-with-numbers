@@ -1,22 +1,22 @@
-const numberToDigits = (n, accDigits = []) => {
-  if (n < 10) return [n, ...accDigits];
+const numberToDigits = (number, accDigits = []) => {
+  if (number < 10) return [number, ...accDigits];
 
-  const units = n % 10;
-  const tens = Math.trunc(n / 10);
+  const units = number % 10;
+  const tens = Math.trunc(number / 10);
 
   return numberToDigits(tens, [units, ...accDigits]);
 };
 
-const powWithIncrementalExponent = (p, ...numbers) =>
+const powWithIncrementalExponent = (initialExponent, ...numbers) =>
   numbers.map((number, index) => {
-    const exponent = p + index;
+    const exponent = initialExponent + index;
     return Math.pow(number, exponent);
   });
 
 const sum = (...numbers) =>
   numbers.reduce((acc, number) => acc + number, 0);
 
-const isInteger = (n) => Number.isInteger(n);
+const isInteger = (number) => Number.isInteger(number);
 
 const digPow = (n, p) => {
   const digits = numberToDigits(n);
