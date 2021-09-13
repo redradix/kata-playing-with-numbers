@@ -1,4 +1,4 @@
-const { digPow, numberToDigits, isInteger, sumPows } = require("./index");
+const { digPow, numberToDigits, isInteger, powWithIncrementalExponent, sum } = require("./index");
 
 describe("Helpers", () => {
   it("splits a number into digits", () => {
@@ -8,12 +8,20 @@ describe("Helpers", () => {
     expect(numberToDigits(46288)).toEqual([4, 6, 2, 8, 8]);
   });
 
-  it("sums pows", () => {
-    expect(sumPows([8, 9], 1)).toBe(89);
-    expect(sumPows([9, 2], 1)).toBe(13);
-    expect(sumPows([6, 9, 5], 2)).toBe(1390);
-    expect(sumPows([4, 6, 2, 8, 8], 3)).toBe(2360688);
+  it("pows numbers incrementing the exponent each time", () => {
+    expect(powWithIncrementalExponent(1, ...[8, 9])).toEqual([8, 81]);
+    expect(powWithIncrementalExponent(1, ...[9, 2])).toEqual([9, 4]);
+    expect(powWithIncrementalExponent(2, ...[6, 9, 5])).toEqual([36, 729, 625]);
+    expect(powWithIncrementalExponent(3, ...[4, 6, 2, 8, 8])).toEqual([64, 1296, 32, 262144, 2097152]);
   });
+
+  it("sums numbers", () => {
+    expect(sum(...[8, 81])).toBe(89);
+    expect(sum(...[9, 4])).toBe(13);
+    expect(sum(...[36, 729, 625])).toBe(1390);
+    expect(sum(...[64, 1296, 32, 262144, 2097152])).toBe(2360688);
+  });
+
   it("checks if it is an integer", () => {
     expect(isInteger(89)).toBe(true);
     expect(isInteger(92.3)).toBe(false);
