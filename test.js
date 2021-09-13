@@ -29,7 +29,7 @@ describe("Helpers", () => {
 });
 
 describe("Playing with numbers", () => {
-  it("it solves the example cases", () => {
+  it("solves the example cases", () => {
     expect(digPow(89, 1)).toBe(1);
     expect(digPow(92, 1)).toBe(-1);
     expect(digPow(695, 2)).toBe(2);
