@@ -15,7 +15,7 @@ const sumPows = (digits, p) =>
     return acc + pow;
   }, 0);
 
-const isInteger = (n) => Math.trunc(n) === n;
+const isInteger = (n) => Number.isInteger(n);
 
 const digPow = (n, p) => {
   const digits = numberToDigits(n);
