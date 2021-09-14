@@ -7,13 +7,13 @@ const numberToDigits = (number, accDigits = []) => {
   return numberToDigits(tens, [units, ...accDigits]);
 };
 
-const powWithIncrementalExponent = (initialExponent, ...numbers) =>
+const powWithIncrementalExponent = (initialExponent, numbers) =>
   numbers.map((number, index) => {
     const exponent = initialExponent + index;
     return Math.pow(number, exponent);
   });
 
-const sum = (...numbers) =>
+const sum = (numbers) =>
   numbers.reduce((acc, number) => acc + number, 0);
 
 const isInteger = (number) => Number.isInteger(number);
@@ -21,7 +21,7 @@ const isInteger = (number) => Number.isInteger(number);
 const digPow = (n, p) => {
   const digits = numberToDigits(n);
 
-  const sumOfPows = sum(...powWithIncrementalExponent(p, ...digits));
+  const sumOfPows = sum(powWithIncrementalExponent(p, digits));
 
   const k = sumOfPows / n;
   return isInteger(k) ? k : -1;
